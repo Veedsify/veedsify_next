@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1,
+h2,
+h3,
+p,
+div {
+    color: #1e1e1e;
+}
+
+
+::selection {
+    background: goldenrod;
+    color: white;
+}
+
+nav,
+section,
+footer {
+    max-width: 1366px;
+    margin: 0 auto;
+    min-height: 10vh;
+    padding: 1rem 0.5rem;
+}
+
+section {
+    margin-bottom: 12rem;
+}
+
+.custom-toast {
+    font-family: inherit !important;
+}
+
+.short_section {
+    min-height: auto;
+}
+
+.blog_hero {
+    min-height: 40vh;
+}
+
+.aspect-slim {
+    aspect-ratio: 21/9;
+}
+
+textarea {
+    min-height: 30vh;
+}
+
+.hero {
+    min-height: 80vh;
+}
+
+.skill-bar {
+    height: 10px;
+    border-radius: 100vmax;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.video_fliped {
+    aspect-ratio: 3/3.5;
+}
+
+.thick-shadow {
+    box-shadow: none;
+    transition: 0.3s ease;
+}
+
+.thick-shadow:hover {
+    box-shadow: 7px 7px 0px #260080;
+}

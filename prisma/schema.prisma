@@ -1,0 +1,110 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+
+model User {
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  username String 
+  user_id String @unique
+  name  String?
+  password String
+  role String @default("user")
+  follower_count Int?
+  profile_image String @default("/placeholder.jpg")
+  client_auth String?
+  status String
+  date DateTime @default(now())
+}
+
+model Blog {
+  id Int @id @default(autoincrement())
+  title String
+  description String
+  post String
+  post_id String
+  slug_id String
+  comments_id Int
+  image String
+  category String 
+  author_name String
+  author_username String
+  author_profile_link String
+  author_profile_image String
+  status String
+  date DateTime @default(now())
+}
+
+model Project {
+  id Int @id @default(autoincrement())
+  title String
+  description String
+  project_id String
+  project_slug String
+  start_date DateTime
+  project_live_link String
+  project_user_id String
+  end_date DateTime
+  main_image String
+  images Json
+  status String
+  date DateTime @default(now())
+}
+
+model Product {
+  id Int @id @default(autoincrement())
+  name String
+  description String
+  price Int
+  category String
+  product_id String
+  product_slug String
+  product_image String
+  images Json
+  status String
+}
+
+model SiteData {
+  id Int @id @default(autoincrement())
+  name String?
+  description String?
+  hero_title String?
+  hero_description String?
+  hero_button_text String?
+  show_services String?
+  show_aboutme String?
+  show_projects String?
+  show_project_button_text String?
+  show_project_button_link String?
+  show_stats String?
+  show_testimonial String?
+  show_featured_product String?
+  show_featured_title String?
+  show_featured_button_text String?
+  show_featured_button_link String?
+  show_blog String?
+  show_hire_section String?
+  hire_section_title String?
+  hire_section_text String?
+  show_social_section String?
+  github_link String?
+  youtube_link String?
+  twitter_link String?
+  instagram_link String?
+  other_socials Json?
+  show_links String?
+  show_services_footer String?
+  business_address String?
+  business_phone Json?
+  business_email Json?
+  map_embed Json?
+}
